@@ -5,6 +5,11 @@ A lightweight Node.js client for the **Prompt Inspector** AI prompt injection de
 [![Node.js 14+](https://img.shields.io/badge/node-%3E%3D14.0.0-brightgreen.svg)](https://nodejs.org/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT)
 
+**Prompt Inspector** is an AI-powered prompt injection detection service that protects LLM-based applications from adversarial inputs, jailbreaks, and malicious prompt manipulation.
+
+- **Website:** [https://promptinspector.io](https://promptinspector.io)
+- **Open Source:** [https://github.com/aunicall/prompt-inspector](https://github.com/aunicall/prompt-inspector)
+- **Docs:** [https://docs.promptinspector.io](https://docs.promptinspector.io)
 ---
 
 ## Installation
@@ -164,44 +169,8 @@ try {
 | `TimeoutError`        | Request exceeds the timeout duration.                  |
 | `ConnectionError`     | Cannot connect to the API server.                      |
 
-## Building the Package
 
-```bash
-cd sdk/nodejs
-
-# Install dependencies
-npm install
-
-# Build TypeScript
-npm run build
-
-# Pack into a tarball
-npm pack
-```
-
-The output package will be: `prompt-inspector-0.1.0.tgz`
-
-## Publishing to npm
-
-```bash
-# Login to npm (required for first-time publishing)
-npm login
-
-# Publish to npm registry
-npm publish
-
-# Or publish with public access (for scoped packages)
-npm publish --access public
-```
-
-You'll be prompted for your npm credentials. Alternatively, you can use an npm access token by setting it in `~/.npmrc`:
-
-```
-//registry.npmjs.org/:_authToken=npm_your-access-token-here
-```
-
-**Note:** Before publishing, ensure the package name in `package.json` is unique on npm. You may need to use a scoped package name like `@your-org/prompt-inspector`.
 
 ## License
 
-MIT
+MIT — see [LICENSE](./LICENSE) for details.
