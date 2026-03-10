@@ -1,0 +1,23 @@
+# Build artifacts
+dist/
+
+# npm packages
+*.tgz
+
+# Dependencies
+node_modules/
+package-lock.json
+yarn.lock
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+
+# Logs
+*.log
+npm-debug.log*

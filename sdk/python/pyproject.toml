@@ -1,0 +1,37 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "prompt-inspector"
+version = "0.1.0"
+description = "Python SDK for Prompt Inspector — AI prompt injection detection service"
+readme = "README.md"
+license = { text = "MIT" }
+requires-python = ">=3.8"
+authors = [
+    { name = "Prompt Inspector Team" },
+]
+keywords = ["prompt", "injection", "detection", "ai", "security", "llm"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Security",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+]
+dependencies = [
+    "httpx>=0.24.0",
+]
+
+[project.urls]
+Homepage = "https://github.com/prompt-inspector/prompt-inspector-python"
+Documentation = "https://github.com/prompt-inspector/prompt-inspector-python#readme"
+Repository = "https://github.com/prompt-inspector/prompt-inspector-python"
+Issues = "https://github.com/prompt-inspector/prompt-inspector-python/issues"

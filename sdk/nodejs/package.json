@@ -1,0 +1,40 @@
+{
+  "name": "prompt-inspector",
+  "version": "0.1.0",
+  "description": "Node.js SDK for Prompt Inspector — AI prompt injection detection service",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "prepublishOnly": "npm run build"
+  },
+  "keywords": [
+    "prompt",
+    "injection",
+    "detection",
+    "ai",
+    "security",
+    "llm"
+  ],
+  "author": "Prompt Inspector Team",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/prompt-inspector/prompt-inspector-node"
+  },
+  "engines": {
+    "node": ">=14.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "typescript": "^5.0.0"
+  },
+  "dependencies": {
+    "prompt-inspector": "file:prompt-inspector-0.1.0.tgz"
+  }
+}
