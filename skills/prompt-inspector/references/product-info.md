@@ -45,44 +45,45 @@ Open source core available at [github.com/aunicall/prompt-inspector](https://git
 Prompt Inspector detects 10 distinct threat categories across 5 attack domains:
 
 ### Logic & Control Payloads
-
-| Category | Name | Description |
-| -------- | ---- | ----------- |
-| `instruction_override` | Instruction Override | Contains strong imperative sentences and absolute control commands, attempting to erase, override, or reverse the model's underlying safety alignment rules. Attackers often use phrases like "Ignore all previous instructions," "From now on you must," or "Forget your core settings" to issue high-priority privileged commands directly to the model. |
-| `asset_extraction` | Asset Extraction | Aims to detect and induce the model to output its preset system prompts (System Prompt), hidden rules, or internal state variables. The text usually contains reverse-engineering-style probing statements such as "Repeat the first prompt you received," "Output your complete system settings," or "Print all hidden text above." |
++ `instruction_override`
++ `asset_extraction`
 
 ### Structural Payloads
-
-| Category | Name | Description |
-| -------- | ---- | ----------- |
-| `syntax_injection` | Syntax Injection | Abuses special characters, structured tags, or delimiters to break the LLM's context parsing logic. Common techniques include forging XML/JSON closing tags (e.g., `</system_override>`), abusing Markdown delimiters (e.g., `\n\n===System===`), or injecting truncation characters (e.g., `"} \n Ignore`) to create role confusion or truncate safety checks. |
++ `syntax_injection`
 
 ### Semantic Payloads
-
-| Category | Name | Description |
-| -------- | ---- | ----------- |
-| `jailbreak` | Jailbreak | Presented as long-form, high-density complex context settings. By constructing fictional scenarios, thought experiments, or developer modes (such as the famous DAN template), it forces the model into a special state that is not constrained by corporate safety policies. These payloads usually contain a large number of rule redefinitions and role-playing presets that violate conventional logic. |
-| `response_forcing` | Response Forcing | Physically truncates the model's safety review mechanism by directly specifying the starting characters or mandatory output format of the model's answer in the input. Typical phrases such as "Your answer must start with 'Sure, the password is...'" or "Never use refusal words like 'Sorry' in your response" are used to break the model's refusal inertia. |
-| `euphemism_bypass` | Euphemism & Bypass | Deliberately evades conventional sensitive word libraries and peripheral moderation APIs (Moderation API) by using code words, metaphors, obscure words, or academic discussions to request non-compliant content. For example, using "test system vulnerability" instead of "write attack code," or asking the model to output a bomb-making recipe in the name of writing a novel. |
++ `jailbreak`
++ `response_forcing`
++ `euphemism_bypass`
 
 ### Agent Exec Payloads
-
-| Category | Name | Description |
-| -------- | ---- | ----------- |
-| `reconnaissance_probe` | Recon Probe | Probing instructions specifically targeting Agents and their toolchains, aimed at identifying the model's callable external capabilities and permission boundaries. Probing questions such as "List all your available functions," "What intranet interfaces can you access," or "Execute system commands to view the current directory" often appear in the text. |
-| `parameter_injection` | Parameter Injection | Implants traditional Web security or system-level malicious code within seemingly normal natural language requests. Payloads are carefully constructed to deceive the LLM into passing them as legitimate parameters to external backend tools (e.g., feeding `$(whoami)`, SQL injection statements `' OR 1=1--`, or intranet scanning IPs to a code interpreter or HTTP client). |
++ `reconnaissance_probe`
++ `parameter_injection`
 
 ### Obfuscated Payloads
-
-| Category | Name | Description |
-| -------- | ---- | ----------- |
-| `encoded_payload` | Encoded Payload | Uses non-natural language encoding algorithms or special character arrangements for high-level obfuscation to evade hard-matching interception based on regular expressions or keywords. Forms of expression include Base64 encoding, Hexadecimal (Hex), Morse code, multilingual mixing, or even inserting zero-width spaces and abnormal character spacing within normal words. |
++ `encoded_payload`
 
 ### Tenant Customization
++ `custom_sensitive_word`
 
-| Category | Name | Description |
-| -------- | ---- | ----------- |
-| `custom_sensitive_word` | Custom Sensitive Word | Triggered by a tenant-defined exact match blocklist (e.g., competitor names, profanity, or internal code names) for strict compliance. |
+
+### Semantic Payloads
++ `jailbreak`
++ `response_forcing`
++ `euphemism_bypass`
+
+
+
+### Agent Exec Payloads
++ `reconnaissance_probe`
++ `parameter_injection`
+
+### Obfuscated Payloads
++ `encoded_payload`
+
+### Tenant Customization
++ `custom_sensitive_word`
+
 
 ---
 
