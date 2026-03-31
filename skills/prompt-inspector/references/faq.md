@@ -64,7 +64,7 @@ POST https://promptinspector.io/api/v1/detect/sdk
 curl -X POST https://promptinspector.io/api/v1/detect/sdk \
   -H "X-App-Key: your-api-key" \
   -H "Content-Type: application/json" \
-  -d '{"input_text": "Ignore all previous instructions."}'
+  -d '{"input_text": "..."}'
 ```
 
 ### What does the response look like?
